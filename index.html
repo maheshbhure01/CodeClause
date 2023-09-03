@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <h1>To-Do List </h1>
+        <input type="text" id="task-input" placeholder="Add a new task">
+        <input type="datetime-local" id="datetime-input">
+        <button id="add-button">Add Task</button>
+        <ul id="task-list"></ul>
+    </div>
+
+    <script>
+        const taskList = document.getElementById("task-list");
+        const taskInput = document.getElementById("task-input");
+        const datetimeInput = document.getElementById("datetime-input");
+        const addButton = document.getElementById("add-button");
+
+        addButton.addEventListener("click", function () {
+            const taskText = taskInput.value.trim();
+            const taskDatetime = datetimeInput.value;
+
+            if (taskText !== "" && taskDatetime !== "") {
+                const taskItem = document.createElement("li");
+                taskItem.className = "task";
+
+                const checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+
+                const taskInfo = document.createElement("div");
+                taskInfo.className = "task-info";
+
+                const taskTextElement = document.createElement("span");
+                taskTextElement.innerText = taskText;
+
+                const taskDatetimeElement = document.createElement("span");
+                taskDatetimeElement.innerText = taskDatetime;
+
+                const deleteButton = document.createElement("button");
+                deleteButton.className = "delete-button";
+                deleteButton.innerText = "Delete";
+
+                deleteButton.addEventListener("click", function () {
+                    taskItem.remove();
+                });
+
+                taskInfo.appendChild(taskTextElement);
+                taskInfo.appendChild(taskDatetimeElement);
+                taskItem.appendChild(checkbox);
+                taskItem.appendChild(taskInfo);
+                taskItem.appendChild(deleteButton);
+
+                taskList.appendChild(taskItem);
+                taskInput.value = "";
+                datetimeInput.value = "";
+            }
+        });
+
+        taskInput.addEventListener("keypress", function (e) {
+            if (e.key === "Enter") {
+                addButton.click();
+            }
+        });
+    </script>
+</body>
+</html>
