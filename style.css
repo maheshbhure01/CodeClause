@@ -1,0 +1,94 @@
+body {
+    background-image: url(samsung_workspace.jpg) ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+
+    font-family: Arial, sans-serif;
+    background-color: #ffa3a3;
+}
+
+#container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+
+    text-align: center  ;
+    font-family: Papyrus, fantasy;
+}
+p.papyrus {
+   
+    font-family: Papyrus;
+}
+
+p.harrington {
+   
+    font-family: Harrington;
+}
+
+
+#task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #8ee8ff;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #96ffb9;
+}
+
+.task input[type="checkbox"] {
+    margin-bottom: 5px;
+}
+
+.task-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-button {
+    background-color: #ff4136;
+    color: #000000;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #951400;
+}
+
+#task-input {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #00ffff;
+}
+
+#datetime-input {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #00ffff;
+}
+
+#add-button {
+    width: 100%;
+    background-color: #0074D9;
+    color: #fff;
+    border: none #00ffff;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#add-button:hover {
+    background-color: #04de1d;
+}
